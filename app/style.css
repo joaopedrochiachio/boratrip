@@ -6,6 +6,8 @@
   --agua: #0F4C45;
   --terra: #B4471A;
   --terra-escura: #963A14;
+  --marinho: #03236C;
+  --sol: #FF9205;
   --cinza: #4A5A52;
   --branco: #FFFFFF;
   --f-titulo: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
@@ -71,16 +73,17 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .topo__in { display: flex; align-items: center; justify-content: space-between; gap: 24px; max-width: calc(1200px + 2 * var(--gutter)); height: var(--topo); margin: 0 auto; padding: 0 20px; }
 .topo__nav { display: none; }
 .so-desktop, .so-desktop-flex { display: none; }
-.logo { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; min-height: 44px; }
-.logo__marca { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--terra); color: var(--branco); }
-.logo__marca .ico { width: 18px; height: 18px; }
-.logo__nome { font: 800 24px/1 var(--f-titulo); letter-spacing: -.03em; }
+.logo { display: inline-flex; align-items: center; gap: 4px; text-decoration: none; min-height: 44px; color: var(--marinho); }
+.logo__bora { font: 800 26px/1 var(--f-titulo); letter-spacing: -.03em; }
+.logo__sol { width: 30px; height: 18px; color: var(--sol); margin-top: -6px; }
+.logo__trip { font: 800 22px/1 var(--f-titulo); letter-spacing: -.01em; color: var(--sol); }
 .logo--claro { color: var(--branco); }
 
 /* Foto com fallback de curvas de nível (aparece enquanto a foto real não existe) */
 .foto { position: relative; overflow: hidden; border-radius: var(--raio); background: var(--agua) url("/assets/img/curvas.svg") center / cover; aspect-ratio: 4 / 3; }
 .foto::before { content: attr(data-legenda); position: absolute; left: 16px; bottom: 14px; right: 16px; font: 500 10px/1.4 var(--f-mono); letter-spacing: .06em; text-transform: uppercase; color: rgba(255, 255, 255, .8); }
 .foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.foto--grupo { aspect-ratio: 4 / 5; }
 .foto--retrato { aspect-ratio: 9 / 11; background-color: var(--mata); }
 
 /* Hero */
@@ -226,6 +229,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .rodape__links a { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; text-decoration: none; font-weight: 500; }
 .rodape__legal { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, .14); }
 .rodape__legal .etq { color: rgba(255, 255, 255, .6); }
+.creditos summary { cursor: pointer; font-size: 13px; color: rgba(255, 255, 255, .6); }
+.creditos p { margin-top: 8px; font-size: 12px; line-height: 1.6; }
 .rodape .pendente { background: rgba(255, 255, 255, .1); }
 
 /* WhatsApp flutuante */
