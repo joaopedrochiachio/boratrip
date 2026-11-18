@@ -1,5 +1,11 @@
 # Fotos que o site precisa
 
+## Situação atual (nov/2026)
+- **Já no site:** `lucas.webp` e `grupo.webp` (fotos enviadas pela BoraTrip), hero e `og.jpg` (Lençóis), e as 9 fotos de destinos (`exp-*.webp`).
+- As fotos de destinos vieram do **Wikimedia Commons** com licença livre. Os créditos exigidos ficam no rodapé (`lib/creditos.ts`). Ao trocar uma delas por foto própria da BoraTrip, apague a linha correspondente em `lib/creditos.ts`.
+- **Logo:** `components/Logo.tsx` recria a marca (bora + sol + TRIP) em código. Se tiver o SVG oficial, ele pode substituir.
+- **Ainda faltam:** `depo-1.webp` … `depo-3.webp` (depoimentos).
+
 Coloque os arquivos na pasta `public/img/` com **exatamente** estes nomes, em **WebP**.
 Enquanto um arquivo não existir, o site mostra o fundo verde com curvas de nível no lugar — nada quebra.
 

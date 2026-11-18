@@ -53,7 +53,7 @@ export function HeroFundo() {
           <img
             ref={ref}
             src="img/hero-mobile.webp"
-            alt="Grupo da BoraTrip reunido na praia"
+            alt="Dunas e lagoas dos Lençóis Maranhenses"
             width={800}
             height={1200}
             fetchPriority="high"

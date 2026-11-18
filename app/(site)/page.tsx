@@ -4,6 +4,7 @@ import { Foto, HeroFundo } from '@/components/Foto';
 import { Ico } from '@/components/Ico';
 import { IcsLink, InstaLink, WhatsLink } from '@/components/Links';
 import { Logo } from '@/components/Logo';
+import { CREDITOS } from '@/lib/creditos';
 import { Metricas } from '@/components/Metricas';
 import { Oferta } from '@/components/Oferta';
 import { Sprite } from '@/components/Sprite';
@@ -65,7 +66,7 @@ export default function Home() {
                 <h2 id="sozinho-titulo">Aqui, desconhecidos viram amigos.</h2>
                 <p className="lead">Muita gente deixa de viajar esperando alguém ter tempo. Na BoraTrip, o grupo é a sua companhia: você chega sozinho e volta com novas amizades, experiências e memórias.</p>
               </div>
-              <Foto slug="grupo" alt="Viajantes da BoraTrip numa selfie em grupo" legenda="Foto: selfie em grupo" className="foto--grande" w={1200} h={900} />
+              <Foto slug="grupo" alt="Lucas com amigos e viajantes da BoraTrip: no barco, com um cacique na Amazônia e nas dunas" legenda="Foto: viajantes da BoraTrip" className="foto--grande foto--grupo" w={1024} h={1280} />
             </div>
             <ul className="pilares">
               {PILARES.map((p) => (
@@ -178,7 +179,7 @@ export default function Home() {
 
         <section className="secao secao--areia" id="quem-guia" aria-labelledby="lucas-titulo">
           <div className="wrap duas-col duas-col--centro duas-col--foto">
-            <Foto slug="lucas" alt="Lucas, geógrafo e fundador da BoraTrip, em campo" legenda="Foto: retrato do Lucas em campo" className="foto--retrato" w={900} h={1100} />
+            <Foto slug="lucas" alt="Lucas, geógrafo e fundador da BoraTrip" legenda="Foto: Lucas" className="foto--retrato" w={900} h={1100} />
             <div className="pilha">
               <p className="selo selo--claro">Quem guia</p>
               <h2 id="lucas-titulo">Prazer, sou o Lucas.</h2>
@@ -273,6 +274,18 @@ export default function Home() {
           <div className="rodape__legal">
             <p className="etq pendente">CNPJ [Preencher] · Cadastur [Preencher]</p>
             <p><a href="privacidade.html">Política de privacidade</a> · © 2026 BoraTrip</p>
+            <details className="creditos">
+              <summary>Créditos das fotos de destinos</summary>
+              <p>
+                Wikimedia Commons:{' '}
+                {CREDITOS.map((c, i) => (
+                  <span key={c.arquivo}>
+                    {i > 0 && ' · '}
+                    {c.onde}: <a href={`https://commons.wikimedia.org/wiki/File:${encodeURIComponent(c.arquivo)}`} rel="noopener" target="_blank">{c.autor}</a> ({c.licenca})
+                  </span>
+                ))}
+              </p>
+            </details>
           </div>
         </div>
       </footer>
