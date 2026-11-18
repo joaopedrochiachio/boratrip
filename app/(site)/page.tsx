@@ -2,11 +2,10 @@ import { Carrossel } from '@/components/Carrossel';
 import { Flutuante } from '@/components/Flutuante';
 import { Foto, HeroFundo } from '@/components/Foto';
 import { Ico } from '@/components/Ico';
-import { IcsLink, InstaLink, WhatsLink } from '@/components/Links';
+import { IcsLink, PdfLink, InstaLink, WhatsLink } from '@/components/Links';
 import { Logo } from '@/components/Logo';
 import { CREDITOS } from '@/lib/creditos';
 import { Metricas } from '@/components/Metricas';
-import { Oferta } from '@/components/Oferta';
 import { Sprite } from '@/components/Sprite';
 import { DEPOIMENTOS, FAQ, INCLUSO, PASSOS, PILARES } from '@/lib/conteudo';
 import { EXP, datasLongas, iso, mesLinha, msg, p2 } from '@/lib/expedicoes';
@@ -55,8 +54,6 @@ export default function Home() {
             <li><strong>7,3 mil</strong><span>viajantes no Instagram</span></li>
           </ul>
         </section>
-
-        <Oferta />
 
         <section className="secao secao--areia" aria-labelledby="sozinho-titulo">
           <div className="wrap">
@@ -114,10 +111,13 @@ export default function Home() {
             <li className="card card--cta">
               <div className="card--cta__in">
                 <Ico nome="calendario" className="ico ico--lg" />
-                <h3>Quer o calendário 2027 na sua agenda?</h3>
-                <p>Baixe todas as datas e programe seu ano de viagens com antecedência.</p>
+                <h3>Quer a agenda 2027 completa?</h3>
+                <p>Baixe o PDF com todas as datas e programe seu ano de viagens com antecedência.</p>
               </div>
-              <IcsLink className="btn btn--claro btn--peq" origem="card-calendario">Salvar calendário <Ico nome="calendario" /></IcsLink>
+              <div className="card--cta__botoes">
+                <PdfLink className="btn btn--claro btn--peq" origem="card-calendario">Baixar agenda em PDF <Ico nome="seta" /></PdfLink>
+                <IcsLink className="link-claro" origem="card-calendario">Salvar na agenda do celular</IcsLink>
+              </div>
             </li>
           </Carrossel>
           <div className="wrap">
@@ -206,13 +206,13 @@ export default function Home() {
           </div>
           <div className="carrossel carrossel--depo">
             <ul className="depos" tabIndex={0} aria-label="Depoimentos, deslize para ver mais">
-              {DEPOIMENTOS.map((n) => (
-                <li className="depo" key={n}>
+              {DEPOIMENTOS.map((d, n) => (
+                <li className="depo" key={d.expedicao}>
                   <Ico nome="aspas" className="ico ico--aspas" />
-                  <blockquote className="depo__texto pendente">[DEPOIMENTO {n}] Texto real do destaque “Depoimentos”, com autorização do viajante.</blockquote>
+                  <blockquote className="depo__texto">{d.texto}</blockquote>
                   <div className="depo__autor">
-                    <Foto slug={`depo-${n}`} alt="" legenda="" className="depo__foto" w={96} h={96} />
-                    <p><strong className="pendente">[NOME]</strong><span className="etq">[EXPEDIÇÃO · MÊS/ANO]</span></p>
+                    <Foto slug={`depo-${n + 1}`} alt="" legenda="" className="depo__foto" w={96} h={96} />
+                    <p><strong className="pendente">{d.nome}</strong><span className="etq">{d.expedicao}</span></p>
                   </div>
                 </li>
               ))}
@@ -253,7 +253,7 @@ export default function Home() {
               <WhatsLink className="btn btn--primario" msg="Oi Lucas, vim pelo site e quero viajar com a BoraTrip" origem="final">
                 Falar com o Lucas no WhatsApp <Ico nome="whats" />
               </WhatsLink>
-              <IcsLink className="btn btn--contorno-claro" origem="final">Salvar calendário 2027 <Ico nome="calendario" /></IcsLink>
+              <PdfLink className="btn btn--contorno-claro" origem="final">Baixar agenda 2027 em PDF <Ico nome="calendario" /></PdfLink>
             </div>
           </div>
         </section>
