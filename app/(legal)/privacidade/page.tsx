@@ -1,7 +1,9 @@
+import { url } from '@/lib/base';
+
 export default function Privacidade() {
   return (
     <main className="wrap doc">
-      <a className="btn btn--contorno btn--peq" href="./">← Voltar ao site</a>
+      <a className="btn btn--contorno btn--peq" href={url('')}>← Voltar ao site</a>
       <h1>Política de privacidade</h1>
       <p className="pendente">[PREENCHER: revisar este texto com o Lucas/contador antes de publicar.]</p>
       <h2>Quem somos</h2>

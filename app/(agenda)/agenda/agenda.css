@@ -11,8 +11,8 @@ body { font-family: "Montserrat", system-ui, sans-serif; color: var(--ag-marinho
 @media screen { .ag-folha { box-shadow: 0 10px 40px rgba(3, 35, 108, .2); } }
 
 /* Faixas de praia nas laterais, que somem no branco do centro */
-.ag-praia { position: absolute; top: 28%; bottom: 0; width: 30mm; background: url("/img/exp-natal.webp") 40% center / auto 100%; }
-.ag-praia--esq { left: 0; -webkit-mask-image: linear-gradient(90deg, #000 20%, transparent); mask-image: linear-gradient(90deg, #000 20%, transparent); background-image: url("/img/hero-mobile.webp"); background-position: 70% center; }
+.ag-praia { position: absolute; top: 28%; bottom: 0; width: 30mm; background: url("../../../public/img/exp-natal.webp") 40% center / auto 100%; }
+.ag-praia--esq { left: 0; -webkit-mask-image: linear-gradient(90deg, #000 20%, transparent); mask-image: linear-gradient(90deg, #000 20%, transparent); background-image: url("../../../public/img/hero-mobile.webp"); background-position: 70% center; }
 .ag-praia--dir { right: 0; -webkit-mask-image: linear-gradient(270deg, #000 20%, transparent); mask-image: linear-gradient(270deg, #000 20%, transparent); background-position: 75% center; }
 .ag-praia::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, #fff 0%, transparent 25%); }
 

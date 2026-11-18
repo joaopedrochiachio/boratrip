@@ -3,6 +3,7 @@
 import type { AnchorHTMLAttributes, ReactNode } from 'react';
 import { whatsHref } from '@/lib/config';
 import { rastrear } from '@/lib/rastrear';
+import { url } from '@/lib/base';
 
 type Base = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> & { origem: string; children: ReactNode };
 
@@ -32,7 +33,7 @@ export function IcsLink({ origem, className, ...resto }: Base) {
     <a
       {...resto}
       className={juntar(className, 'js-ics')}
-      href="boratrip-calendario-2027.ics"
+      href={url('boratrip-calendario-2027.ics')}
       download
       data-origem={origem}
       onClick={() => rastrear('calendario_download', origem)}
@@ -61,7 +62,7 @@ export function PdfLink({ origem, className, ...resto }: Base) {
     <a
       {...resto}
       className={juntar(className, 'js-pdf')}
-      href="boratrip-agenda-2027.pdf"
+      href={url('boratrip-agenda-2027.pdf')}
       download
       data-origem={origem}
       onClick={() => rastrear('calendario_download', origem, { formato: 'pdf' })}
