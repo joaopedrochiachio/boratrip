@@ -24,6 +24,11 @@ npm run agenda:pdf # com o site rodando em localhost:3000, gera public/boratrip-
 - `components/` — componentes React. Os interativos (carrossel, botão flutuante, faixa de oferta, fotos, métricas e links rastreados) são componentes de cliente
 - `public/img/` — fotos (veja `FOTOS.md`); `public/assets/img/` — favicon e curvas de nível
 
+## GitHub Pages
+O workflow `.github/workflows/pages.yml` publica o site a cada push no `main`, em `https://joaopedrochiachio.github.io/boratrip/`.
+Na primeira vez, ative em **Settings → Pages → Source: GitHub Actions**.
+Para testar a versão estática localmente: `STATIC_EXPORT=1 NEXT_PUBLIC_BASE_PATH=/boratrip npm run build` (gera `out/`).
+
 ## Antes de publicar (em `lib/config.ts`)
 - `whatsappNumero` — com o número, cada botão abre o WhatsApp com a mensagem pronta do destino
 - `ga4` e `metaPixel` — IDs das contas; os eventos `whatsapp_click`, `calendario_download` e `instagram_click` já estão ligados

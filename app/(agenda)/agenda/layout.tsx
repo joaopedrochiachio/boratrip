@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
+import { url } from '@/lib/base';
 
 export const metadata: Metadata = {
   title: 'Agenda de viagens — BoraTrip',
   description: 'Todas as datas das expedições BoraTrip.',
   robots: { index: false },
-  icons: { icon: { url: '/assets/img/favicon.svg', type: 'image/svg+xml' } },
+  icons: { icon: { url: url('assets/img/favicon.svg'), type: 'image/svg+xml' } },
 };
 
 export default function AgendaLayout({ children }: { children: ReactNode }) {

@@ -9,6 +9,7 @@ import { Metricas } from '@/components/Metricas';
 import { Sprite } from '@/components/Sprite';
 import { DEPOIMENTOS, FAQ, INCLUSO, PASSOS, PILARES } from '@/lib/conteudo';
 import { EXP, datasLongas, iso, mesLinha, msg, p2 } from '@/lib/expedicoes';
+import { url } from '@/lib/base';
 
 export default function Home() {
   return (
@@ -273,7 +274,7 @@ export default function Home() {
           </div>
           <div className="rodape__legal">
             <p className="etq pendente">CNPJ [Preencher] · Cadastur [Preencher]</p>
-            <p><a href="privacidade.html">Política de privacidade</a> · © 2026 BoraTrip</p>
+            <p><a href={url('privacidade.html')}>Política de privacidade</a> · © 2026 BoraTrip</p>
             <details className="creditos">
               <summary>Créditos das fotos de destinos</summary>
               <p>

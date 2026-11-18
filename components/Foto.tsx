@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { url } from '@/lib/base';
 
 /** Enquanto o arquivo da foto não existir, a <img> some e fica o fundo de curvas de nível. */
 function useSemFoto() {
@@ -30,7 +31,7 @@ export function Foto({ slug, alt, legenda, className = '', w = 900, h = 675, eag
       {!semFoto && (
         <img
           ref={ref}
-          src={`img/${slug}.webp`}
+          src={url(`img/${slug}.webp`)}
           alt={alt}
           width={w}
           height={h}
@@ -48,11 +49,11 @@ export function HeroFundo() {
   return (
     <div className="hero__fundo">
       <picture>
-        <source media="(min-width: 900px)" srcSet="img/hero.webp" />
+        <source media="(min-width: 900px)" srcSet={url('img/hero.webp')} />
         {!semFoto && (
           <img
             ref={ref}
-            src="img/hero-mobile.webp"
+            src={url('img/hero-mobile.webp')}
             alt="Dunas e lagoas dos Lençóis Maranhenses"
             width={800}
             height={1200}
