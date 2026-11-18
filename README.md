@@ -9,6 +9,7 @@ npm run dev       # desenvolvimento em http://localhost:3000
 npm run build     # build de produção (inclui checagem de tipos)
 npm start         # serve o build de produção
 npm run typecheck # só a checagem de tipos
+npm run agenda:pdf # com o site rodando em localhost:3000, gera public/boratrip-agenda-2027.pdf
 ```
 
 ## Estrutura
@@ -17,6 +18,7 @@ npm run typecheck # só a checagem de tipos
 - `lib/config.ts` — WhatsApp, métricas e prazo da oferta. **Configuração antes de publicar**
 - `app/(site)/page.tsx` — a página principal; `app/(site)/layout.tsx` — `<head>`, SEO e fontes
 - `app/(site)/boratrip-calendario-2027.ics/route.ts` — gera o calendário com as 11 saídas no build
+- `app/(agenda)/agenda/` — a agenda no estilo do pôster (folha A4). O PDF baixado no site sai daqui: depois de mudar datas em `lib/expedicoes.ts`, rode `npm run agenda:pdf` e faça commit do PDF
 - `app/(legal)/privacidade/` — política de privacidade (também responde em `/privacidade.html`)
 - `app/style.css` — estilos (cores e fontes no topo, em `:root`)
 - `components/` — componentes React. Os interativos (carrossel, botão flutuante, faixa de oferta, fotos, métricas e links rastreados) são componentes de cliente
@@ -25,6 +27,5 @@ npm run typecheck # só a checagem de tipos
 ## Antes de publicar (em `lib/config.ts`)
 - `whatsappNumero` — com o número, cada botão abre o WhatsApp com a mensagem pronta do destino
 - `ga4` e `metaPixel` — IDs das contas; os eventos `whatsapp_click`, `calendario_download` e `instagram_click` já estão ligados
-- `ofertaAte` — data de fim da Black Friday; a faixa some sozinha depois
 
 Os itens entre colchetes `[ASSIM]` aparecem destacados em laranja claro na página para ninguém esquecer de preencher.

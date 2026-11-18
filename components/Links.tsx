@@ -54,3 +54,17 @@ export function InstaLink({ origem, className, ...resto }: Base) {
     />
   );
 }
+
+/** Download da agenda em PDF (estilo do pôster) com evento calendario_download. */
+export function PdfLink({ origem, className, ...resto }: Base) {
+  return (
+    <a
+      {...resto}
+      className={juntar(className, 'js-pdf')}
+      href="boratrip-agenda-2027.pdf"
+      download
+      data-origem={origem}
+      onClick={() => rastrear('calendario_download', origem, { formato: 'pdf' })}
+    />
+  );
+}

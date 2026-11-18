@@ -33,5 +33,6 @@ Para converter: https://squoosh.app (formato WebP, qualidade ~75).
 Também falta: **logo oficial** em SVG (hoje o site usa um logo provisório com bússola).
 
 ## Depoimentos (texto)
+Hoje o site mostra **3 depoimentos de exemplo** (texto genérico, nome destacado como `[Nome do viajante]`). Troque pelos reais antes de divulgar o site.
 Para cada um dos 3 a 6 depoimentos do destaque "Depoimentos": **texto**, **nome**, **expedição + mês/ano** e **autorização** do viajante.
 Edite em `lib/conteudo.ts` (`DEPOIMENTOS`) e no bloco de depoimentos de `app/(site)/page.tsx` (procure por `[DEPOIMENTO`).
